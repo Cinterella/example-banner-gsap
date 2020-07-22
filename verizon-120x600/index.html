@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Verizon FiOS</title>
+        <meta name="ad.size" content="width=120,height=600">
+        <script type="text/javascript">
+            var clickTag = "";
+        </script>
+        
+        <style>
+            @font-face {
+                font-family: "Neue Haas Grotesk";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.svg') format('svg');
+                font-weight:400;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Medium";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.svg') format('svg');
+                font-weight:600;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Bold";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.svg') format('svg');
+                font-weight:800;
+                font-style:normal;
+            }
+            
+            body{
+                margin: 0;
+                padding: 0;
+                width: 120px;
+                height: 600px;
+                line-height: 1.13;
+                font-size: 20px;
+                letter-spacing: 1;
+                color: #CD040B;
+                font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800; /*BOLD-800, MEDIUM-600, ROMAN - 400*/
+                font-style: normal;
+                
+            }
+            
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            sup{
+                vertical-align: top;
+                font-size: 50%;
+            }
+            
+            sub{
+                vertical-align: bottom;
+                font-size: 50%;
+            }
+            
+            #border{
+                position: relative;
+                width: 120px;
+                height: 600px;
+                border: 1px solid #000;
+                background-color: #e4e5e3;
+                overflow: hidden;
+                cursor: pointer;
+                z-index: 0;
+				box-sizing: border-box;
+            }
+            
+            #border:hover #cta{
+                background-color: #A80309;
+                border: none !important;
+            }
+            
+            #screen{
+                z-index: 599;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #fff;
+                opacity: 1;
+            }
+            
+            #blueBox{
+                position: absolute;
+                width: 120px;
+                height: 600px;
+                background-color: #e8f6fe;
+                z-index: 2;
+                clip: rect(300px, 120px, 600px, 0px);
+            }
+            
+            #yellowBox{
+                position: absolute;
+                width: 120px;
+                height: 600px;
+                background-color: #fcfbe4;
+                z-index: 2;
+                clip: rect(600px, 120px, 600px, 0px);
+            }
+            
+            #copy1a{
+                position: absolute;
+                left: 4px;
+                top: 232px;
+                opacity: 1;
+                z-index: 1;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+                
+            }
+            
+            #copy1b{
+                position: absolute;
+                top: 318px;
+                left: 4px;
+                opacity: 1;
+                z-index: 200;
+                clip: rect(0px, 300px, 125px, 0px);
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+            }
+            
+            #copy2{
+                position: absolute;
+                top: 100px;
+                left: 4px;
+                opacity: 1;
+                z-index: 200;
+                clip: rect(125px, 300px, 125px, 0px);
+                letter-spacing: -0.1px;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+            }
+            
+            #copy3{
+                position: absolute;
+                left: 4px;
+                top: 100px;
+                opacity: 1;
+                z-index: 1;
+                opacity: 0;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+            }
+            
+            #copy4{
+                position: absolute;
+                font-size: 16.5px;
+                z-index: 400;
+                left: 4px;
+                top: 70px;
+                letter-spacing: .35;
+                opacity: 0;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+            }
+            
+            #cta{
+                width: 100px;
+                height: 35px;
+                background-color: #CD040B;
+                position: absolute;
+                right: 10px;
+                bottom: 16px;
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+				font-family: "Neue Haas Grotesk Medium", Arial, sans-serif;
+                font-weight: 600;
+                line-height: 250%;
+                letter-spacing: .5;
+                z-index: 500;
+                opacity: 0;
+            }
+            
+            #logo{
+                position: absolute;
+                width: 66px;
+                top: 12px;
+                left: 7px;
+                z-index: 500;
+                opacity: 0;
+            }
+            
+            #legal{
+                z-index: 600;
+                opacity: 1;
+            }
+            
+            #legalCopy{
+                position: absolute;
+                font-size: 12px;
+                font-weight: 400;
+                color: #000;
+                width: 120px;
+                height: 250px;
+                top: -250px;
+                background-color: #f6f6f6;
+                z-index: 700;
+            }
+            
+            #legalCopy p{
+                position: absolute;
+                width: 110px;
+                left: 4px;
+                z-index: 600;
+				font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                font-weight: 400;
+            }
+            
+            #legalTag{
+                font-size: 9px;
+                color: #666;
+                position: absolute;
+                left: 10px;
+                bottom: 57px;
+                z-index: 100;
+				font-family: "Neue Haas Grotesk Medium", Arial, sans-serif;
+                font-weight: 600;
+                opacity:1;
+                
+            }
+            
+            #priceLockup{
+                float: left;
+                position: absolute;
+                font-size: 20px;
+                left: 4px;
+                top: 190px;
+                z-index: 1;
+                opacity: 0;
+            }
+            
+            #dollar{
+                float: left;
+                position: absolute;
+                font-size: 15px;
+                color: #333;
+                background-color: #8bd7f8;
+                width: 22px;
+                height: 22px;
+                top: 26px;
+                left: 0.5px;
+                text-align:center;
+                line-height: 150%;
+                vertical-align: middle;
+                border-radius: 15px;
+				-moz-border-radius: 15px;
+				-webkit-border-radius: 15px;
+                z-index: 450;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+            }
+            
+            #price{
+                position: absolute;
+                font-size: 43px;
+                top: 22px;
+                left: 18px;
+            }
+            
+            #perMonth{
+                position: absolute;
+                font-size: 20px;
+                left: 75px;
+                letter-spacing: -0.2px;
+                top: 25px;
+                color: #000;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 800;
+            }
+            
+            #priceLegal{
+                position: absolute;
+                font-size: 11px;
+                font-weight: 400;
+                left: 1px;
+                top: 65px;
+                width: 120px;
+                letter-spacing: .1;
+                color: #000;
+				font-family: "Neue Haas Grotesk Medium", Arial, sans-serif;
+                font-weight: 600;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <!--////////////////////--CLICKTAG--////////////////////-->
+        <a href="javascript:window.open(clickTag);">
+            
+        <!--////////////////////--BORDER--////////////////////-->
+        <div id="border">
+            
+            <!--////////////////////--SCREEN--////////////////////-->
+            <div id="screen"></div>
+            
+            <!--////////////////////--LEGAL--////////////////////-->
+            <div id="legal">
+                <div id="legalTag">Offer &amp; Pricing Details</div>
+                <div id="legalCopy"><p>Offer &amp; Pricing Details<br /><br />Up to $150 installation fee, $1.99/mo. Broadcast Fee, up to $10/mo. Router Fee, $12/mo. HD STB fee, &amp; other fees, taxes, equipment charges &amp; terms may apply.<br /><br />&copy;2015  Verizon.</p></div>
+            </div>
+             
+            <!--////////////////////--COPY--////////////////////-->
+            <div id="copy1a">Movie<br />marathons.</div>
+            <div id="copy1b">Super-fast Internet.</div>
+            <div id="copy2">Get <br />HBO<sup>&reg;</sup>or<br />SHOWTIME<sub>&reg;</sub> for 2 years.</div>
+            
+            <div id="copy3">Plus Fios 50/50<br />Mbps Internet.</div>
+            
+            <div id="copy4">Get 50/50 Mbps Internet, Fios<sup>&reg;</sup><br />TV Local and HBO<sup>&reg;</sup> or SHOWTIME<sub>&reg;</sub><br />for 2 years starting at</div>
+            
+            <div id="priceLockup">
+                <div id="startingAt">For</div>
+                <div id="dollar">$</div>
+                <div id="price">50</div>
+                <div id="perMonth">/mo</div>
+                <div id="priceLegal">for 1 year + taxes, equip.<br />charges &amp; other fees</div>
+            </div>
+            
+            <div id="blueBox"></div>
+            <div id="yellowBox"></div>
+            
+            <!--////////////////////--LOGO & CTA--////////////////////-->
+            <img id="logo" src="imgs/2015_FiOS_logo.svg" style="border-style:none">
+            <div id="cta">Learn More</div>
+        </div>
+        </a>
+        
+        <!--////////////////////--GREENSOCK--////////////////////-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="jsMin/SplitText.min.js"></script>
+        
+        <!--////////////////////--ANIMATIONS--////////////////////-->
+        <script>
+            
+            <!--////////////////////--VARS--////////////////////-->
+            var legalOpen = false;
+            var copyOne = new SplitText("#copy1a", {type:"lines"}); 
+            
+            <!--////////////////////--LEGAL FUNCTIONALITY--////////////////////-->
+            function legalOver(){
+                if(legalOpen == true){
+                    TweenMax.to(legalCopy, .5, {css: {top:"-250px"}, ease:Strong.easeOut});
+                    legalOpen = false;
+                    
+                } else if(legalOpen == false){
+                    TweenMax.to(legalCopy, .5, {css: {top:"0px"}, ease:Strong.easeOut});
+                    legalOpen = true;
+                }
+            }
+                     
+            function init(){
+                
+                eventOne();
+            }
+            function initDisclaimer(){
+                document.getElementById("legalTag").style.zIndex = 600;
+                document.getElementById("legal").onmouseover = legalOver;
+                document.getElementById("legal").onmouseout = legalOver;
+            }
+            
+            function eventOne(){
+                 var tl = new TimelineLite();
+            	var blocker = document.getElementById("screen");
+				tl.to(blocker, .01, {opacity:0})
+                .staggerFrom(copyOne.lines, .5, {css:{left:"+=300px"}, ease:Strong.easeOut}, "0.1")
+                .from(copy1b, .5, {css:{clip:"rect(250px, 300px, 250px, 0px)"}, ease:Strong.easeOut}, "+=.5")
+                .from(blueBox, .5, {css:{clip:"rect(600px, 120px, 600px, 0px)"}, ease:Strong.easeOut}, "-=.4")
+                .to(copy2, .5, {css:{clip:"rect(0px, 120px, 600px, 0px)"}, ease:Strong.easeOut}, "+=1.25")
+                .to(blueBox, .5, {css:{clip:"rect(0px, 120px, 300px, 0px)"}, ease:Strong.easeOut}, "-=.5")
+                .to(copy1b, .5, {css:{clip:"rect(0px, 120px, 0px, 0px)"}, ease:Strong.easeOut}, "-=.6")
+                .to(copy1a, 0, {opacity:0})
+                .to(copy3, 0, {opacity: 1})
+                .to(copy2, .5, {css:{clip:"rect(0px, 120px, 0px, 0px)"}, ease:Strong.easeOut}, "+=2")
+                .to(blueBox, 1, {css:{clip:"rect(0px, 120px, 0px, 0px)"}, ease:Strong.easeOut}, "-=.4")
+                .to(yellowBox, .5, {css:{clip:"rect(300px, 120px, 600px, 0px)"}, ease:Strong.easeOut}, "-=.4")
+                .to(priceLockup, 0, {opacity:1})
+                .to(copy3, .5, {css:{top:"-=200px"}, ease:Strong.easeOut}, "+=2")
+                .from(priceLockup, .5, {css:{top:"+=150px"}, ease:Strong.easeOut}, "-=.2")
+                .to(priceLockup, .5, {css:{top:"+=45px"}}, "+=2")
+                .to(yellowBox, .5, {css:{top:"+=300px"}}, "-=.5")
+                .to(startingAt, .5, {opacity:0}, "-=.5")
+                .to(copy4, .5, {opacity: 1})
+                .to(logo, .5, {opacity:1})
+                .to(cta, .5, {opacity:1}, "-=.5")
+				.from(legalTag, .5, {opacity:0, onComplete:initDisclaimer}, "-=.5")
+                ;
+            }
+            
+            //---------------------
+            init();
+            
+        
+        
+        
+        </script>
+    </body>
+
+</html>

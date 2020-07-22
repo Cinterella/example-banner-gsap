@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* COMMON */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	-webkit-font-smoothing: antialiased;
+}
+img {
+	border-style: none;
+	image-rendering: crisp-edges;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	height: 250px;
+}
+#canvas {
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	border: 1px solid #000000;
+	/*background-color: #FFF;*/
+	overflow: hidden;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+#blocker {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	z-index: 2000;
+}
+
+/* CUSTOM */
+
+#copy_bg{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 40;
+}
+#copy{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 40;
+}
+#cta{
+	position: absolute;
+	right: 5px;
+	top: 130px;
+	z-index: 45;
+}
+#sodimac_logo{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+}
+#yellow{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 90;
+}
+.product_image{
+   position: absolute;
+   left: 0px;
+   top: 0px;
+}
+#image1{
+   z-index: 8;
+}
+#image2{
+   z-index: 7;
+}
