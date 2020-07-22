@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>index</title>
+        <meta name="ad.size" content="width=728,height=90">
+		<script type="text/javascript">
+			var clickTag = "";
+		</script>
+        <style>
+            @font-face {
+                font-family: "Neue Haas Grotesk";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.svg') format('svg');
+                font-weight:400;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Medium";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.svg') format('svg');
+                font-weight:600;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Bold";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.svg') format('svg');
+                font-weight:800;
+                font-style:normal;
+            }
+            
+            body{
+                margin: 0;
+                padding: 0;
+                width: 728px;
+                height: 90px;
+                line-height: 1.2;
+                font-size: 26px;
+                letter-spacing: .4;
+                color: #CD040B;
+                font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                font-weight: 400; //*BOLD-800, MEDIUM-600, ROMAN - 400*/
+                font-style: normal;
+                z-index: 200;              
+            }
+            
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            sup{
+                vertical-align: super;
+                line-height: 0px;
+                font-size: 50%;
+            }
+            sub{
+                vertical-align: sub;
+                line-height: 0px;
+                font-size: 50%;
+            }
+            #border{
+                position: relative;
+                width: 728px;
+                height: 90px;
+                background-color: #E7E7E7;
+                overflow: hidden;
+                cursor: pointer;
+                z-index: 500; 
+            } 
+            #nobgBorder{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 728px;
+                height: 90px;
+                border: 1px solid #000;
+                box-sizing: border-box; 
+                z-index: 600;
+            }
+            #border:hover  #cta{
+                background-color: #A80309;
+                border: none !important;
+            }
+            #arrow {
+                position: absolute;
+                right: 10px;
+                top: 0px;
+                border: none !important;
+            }
+            #arrow img{
+                border: none !important;
+            }
+            #screen{
+                z-index: 150;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #fff;
+            } 
+
+            /*--////////////////////--SNOW INIT--////////////////////--*/
+            
+            #snowflakeContainer {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            .snowflake {
+                padding-left: 15px;
+                font-family: Cambria, Georgia, serif;
+                font-size: 14px;
+                line-height: 24px;
+                position: fixed;
+                color: #FFFFFF;
+                user-select: none;
+                z-index: 99;
+            }
+            .snowflake:hover {
+                cursor: default;
+            }
+            h1 {
+                font-size: 26px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+            }
+            p, ol {
+                font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
+                font-size: 1px;
+                color: #FFFFFF;
+            }
+            li {
+                margin-bottom: 24px;
+                padding-left: 10px;
+            }
+            /*--////////////////////--SNOW FINISH--////////////////////--*/ 
+
+            .middleTextFormat{
+                font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 600;
+                font-size: 26px;
+                line-height:30px;
+                letter-spacing:1px;
+            }
+            #c1{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 22px;
+                z-index: 110;
+            }
+            #c2{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 45px; 
+                z-index: 110;
+            }
+            #whiteBox{
+                position: absolute;
+                width: 728px;
+                height: 90px;
+                background-color: #ffffff;
+                z-index: 2;
+                left: 0px;
+                opacity: 0;
+                z-index: 100;
+            }
+            #c3{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 22px;
+                z-index: 110;
+                opacity: 1;
+            }
+             #c4{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 45px;
+                z-index: 110;
+                opacity: 1;
+            }
+
+            #frame3{
+                font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 600;
+                font-size: 24px;
+                line-height:30px;
+                letter-spacing:1px;
+                background-color: #ff0000;
+            }
+            #c6a{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 22px;
+                z-index: 110;
+                opacity: 1;
+            }
+             #c6b{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 46px;
+                z-index: 110;
+                opacity: 1;
+            }
+
+            #c7{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 20px;
+                z-index: 110;
+                opacity: 1;
+            }
+            #c8{
+                position: absolute;
+                line-height: 26px;
+                left: 21px;
+                top: 46px;
+                z-index: 110;
+                opacity: 1;
+            }
+
+            #logo{
+                position: absolute;
+                width: 87px;
+                top: -5px;
+                left: 15px;
+                opacity: 0;
+                z-index: 110;
+                border: none !important;
+            }
+            #cta{
+                width: 120px;
+                height: 35px;
+                background-color: #CD040B;
+                position: absolute;
+                right: 25px;
+                bottom: 25px;
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                font-weight: 500;
+                line-height: 250%;
+                letter-spacing: 1px;
+                opacity: 0;
+                z-index: 110;
+            }
+            #ctaCopy{
+                position: absolute;
+                left: 11px;
+                top: -2px;
+            }
+            #efCopy{
+                font-weight: 600px;
+                color: #000000;
+                opacity: 1; 
+                z-index: 110;
+            }
+            #f1{
+                position: absolute;
+                font-family: "Neue Haas Grotesk Medium", Arial, sans-serif;
+                letter-spacing: .5px;
+                font-size: 15px;
+                left: 125px;
+                line-height: 15px;
+                top: 10px;
+                opacity: 1;
+                z-index: 110;
+            }
+
+            #maskerPrice{
+                width: 22px;
+                height: 22px;
+                left: 124px;
+                top: 43px;
+                position: absolute;
+                border-radius: 34px;
+                -moz-border-radius: 34px;
+                -webkit-border-radius: 34px;
+                overflow: hidden;
+                opacity: 1;
+                z-index: 111;
+            }
+            #money{
+                position: absolute;
+                font-size: 13px;
+                font-family: "Neue Haas Grotesk Medium", Arial, sans-serif;
+                font-weight:800;
+                left: 7px;
+                top: 3px;
+                z-index: 100;
+                color: #000000;
+                opacity: 1; 
+            }       
+            #priceCircle{
+                width: 300px;
+                height: 300px;
+                z-index: 110;
+                background-color: #8bd7f8;
+                opacity: 1;
+            }
+            #price{
+                position: absolute;
+                font-weight: 800;
+                font-size: 53px;
+                font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                letter-spacing:1.5px;
+                top: 32px;
+                left: 140px;
+                z-index: 110;
+                opacity: 1; 
+            }  
+            #month{
+                position: absolute;
+                font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-weight: 600;
+                font-size: 28px;
+                z-index: 110;
+                letter-spacing:.8px;
+                color:#000;
+                top: 38px;
+                left: 218px;
+                opacity: 1; 
+            }   
+            #efSubtitle{
+                position: absolute;
+                font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                font-weight: 400;
+                font-size: 11px;
+                line-height:13px;
+                letter-spacing:0.3px;
+                color:#333;
+                left: 470px;
+                top: 29px;
+                z-index: 110;
+                opacity: 1; 
+            }    
+            
+        </style>
+    </head>
+    
+    <body>
+        <a href="javascript:window.open(window.clickTag);">
+        <div id="border">
+            <div id="screen"></div>
+
+            <!-- <div id="legal">
+             <div id="legalTag">Symmetrical speed options available up to 500/500 Mbps</div>-->
+             <!--<div id="legalCopy"><p>Pricing &amp; Offer Details<br/><br/>Up to $150 set-up charge, $199/mo. Broadcast<br/>Fee, up to $10/mo. router fee, $12/mo. HD STB<br/>fee, &amp; other fees, taxes, equipment charges &amp;<br/>terms may apply. ©2015 Verizon.<br/><span id="legalBold">Mobile App:</span> Requires TV, Internet &amp; premium<br/>movie channel subscription &amp; only avail. On<br/>select devices. Wireless data charges may apply.</p></div>
+            </div>-->
+
+                        <!--////////////////////--FRAME1--////////////////////-->
+
+            <div id="c1" class="middleTextFormat">Tis the</div>
+            <div id="c2" class="middleTextFormat">season.</div>
+
+                        <!--////////////////////--FRAME2--////////////////////-->
+
+            <div id="c3" class="middleTextFormat">For binge</div>
+            <div id="c4" class="middleTextFormat">watching.</div>
+
+
+                        <!--////////////////////--FRAME3--////////////////////-->                       
+            <div id="frame3">
+                <h1 id="c6a" class="middleTextFormat">Get HBO<sup>®</sup>or SHOWTIME<sub>®</sub></h1>
+                <h1 id="c6b" class="middleTextFormat">for 1 year.</h1>
+
+            </div>
+                        <!--////////////////////--FRAME4--////////////////////-->
+
+            <div id="c7" class="middleTextFormat">And blazing-fast</div>
+            <div id="c8" class="middleTextFormat">Internet.</div>
+
+                        <!--////////////////////--ENDFRAME--////////////////////-->
+
+            <div id="efCopy">
+                <h1 id="f1">Get 50 Mbps Internet, Fios TV Local plus HBO<sup>®</sup></br >or SHOWTIME<sub>®</sub> for 1 year starting at</h1>
+            </div>
+                <div id="maskerPrice">
+                    <div id="money">$</div>
+                    <div id="priceCircle"></div>
+                </div>
+                <div id="price">50</div>
+                <div id="month">/mo</div>
+                <div id="efSubtitle">for 1 year + taxes,</br >equip. charges &amp;</br >other fees.</div>
+
+                        <!--////////////////////--LOGO & CTA--////////////////////-->
+
+                                <!--////////////////--SNOW--////////////////-->
+
+            <div id="snowflakeContainer">
+                <p class="snowflake">&middot;</p>
+            </div>
+
+            <div id="nobgBorder"></div>
+
+            <script src="jsMin/fallingsnow.js"></script>
+            <script src="jsMin/prefixfree.min.js"></script>
+
+            <div id="whiteBox"></div>
+
+            <img id="logo" src="imgs/2015_FiOS_logo.svg" style="border-style:none">
+            <div id="cta">
+                <div id="ctaCopy">Learn more</div>
+                <div id="arrow"><img class="cta-arrow" src="imgs/arrow.png" /></div>
+            </div>
+        </div>
+        </a>
+
+             </div>
+    </a>
+        
+        <!--CDN FOR GREENSOCK TWEENMAX-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <!--SPLIT TEXT LOCAL FILE-->
+        <script src="jsMin/script.js"></script>
+        <script>
+            
+            //var legalOpen = false;         
+
+            /*function legalOver(){
+				
+                if(legalOpen == true){
+                    TweenMax.to(legalCopy, .5, {css:{top:"-250px"}, ease:Strong.easeOut});
+					TweenMax.to(legalTag, .5, {css:{opacity:"1"}, ease:Strong.easeOut});
+                    legalOpen = false;
+                    
+                } else if(legalOpen == false){
+                    TweenMax.to(legalCopy, .5, {css:{top:"0"}, ease:Strong.easeOut});
+					TweenMax.to(legalTag, .5, {css:{opacity:"0"}, ease:Strong.easeOut});
+                    legalOpen = true;
+                }
+            }*/
+                        
+            function init(){
+                eventOne();
+            }
+			
+            /*function initDisclaimer(){
+				
+				document.getElementById("legalTag").style.zIndex = 600;
+				document.getElementById("legal").onmouseover = legalOver;
+                document.getElementById("legal").onmouseout = legalOver;	
+			}*/
+			
+            function eventOne(){
+                var tl = new TimelineLite();
+                var blocker = document.getElementById("screen");
+				tl.to(blocker, .01, {opacity:0})
+
+                //Frame1 animation
+                .from(c1, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 0.6)
+                .from(c2, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 0.5)
+                .to(c1, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 2.3)
+                .to(c2, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 2.3)
+                
+
+                //Frame2 animation
+                .from(c3, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 3.2)
+                .from(c4, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 3.1)
+               
+                .to(c3, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 5)
+                .to(c4, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 5)
+               
+
+                //Frame3 animation
+                .from(c6a, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 5.9)
+                .from(c6b, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 5.8)
+                .to(c6a, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 8)
+                .to(c6b, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 8)
+
+                //Frame4 animation
+                .from(c7, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 8.9)
+                .from(c8, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 8.8)
+                .to(c7, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 11)
+                .to(c8, .5, {css:{opacity:"0"}, ease:Strong.easeOut}, 11)
+                .to(whiteBox, 1, {css:{opacity:"1"}, ease:Linear.easeNone}, 11)
+                
+                //End frame animation
+                .from(f1, .5, {css:{top:"-=30px", opacity:"0"}, ease:Strong.easeOut}, 12)
+                
+
+
+                .from(maskerPrice, .5, {css:{top:"-=30px", opacity:"0"}}, 12.1)
+                .from(price, .5, {css:{top:"-=30px", opacity:"0"}}, 12.2)
+                .from(month, .5, {css:{top:"-=30px", opacity:"0"}}, 12.3)
+                .from(efSubtitle, .5, {top:"-=30px", css:{opacity:"0"}}, 12.4)
+                .to(logo, .5, {opacity:1}, 12.5)
+                .to(cta, .5, {opacity:1}, 12.6)
+
+                ;
+
+            }
+            
+            //---------------------
+            init();
+            
+        </script>
+    </body>
+
+</html>

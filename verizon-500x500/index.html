@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Verizon FiOS</title>
+        <meta name="ad.size" content="width=500,height=500">
+        <script type="text/javascript">
+            var clickTag = "";
+        </script>
+        
+        
+        <style>
+            @font-face {
+                font-family: "Neue Haas Grotesk";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.svg') format('svg');
+                font-weight:400;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Medium";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.svg') format('svg');
+                font-weight:600;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Bold";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.svg') format('svg');
+                font-weight:800;
+                font-style:normal;
+            }
+            
+            
+            body{
+                margin: 0;
+                padding: 0;
+                width: 500px;
+                height: 500px;
+                line-height: 1.2;
+                font-size: 28px;
+                letter-spacing: .3;
+                color: #CD040B;
+                font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+                font-style: normal;
+                
+            }
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            sup{
+                font-size: 50%;
+                line-height: 0;
+            }
+            
+            #border{
+                position: relative;
+                width: 500px;
+                height: 500px;
+                border: 1px solid #000;
+                background-color: #e4e5e3;
+                overflow: hidden;
+                cursor: pointer;
+				box-sizing: border-box;
+            }
+            
+            #screen{
+                z-index: 900;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #fff;
+            }
+            #mask{
+                position: absolute;
+                top: 98px;
+                left: 78px;
+                width: 500px;
+                z-index: 20;
+                opacity: 0;
+                -moz-opacity: 0;
+                filter: alpha(opacity=0);
+            }
+            #mask img{
+                border: none !important;
+            }  
+            #ticket{
+                position: absolute;
+                top: 600px;
+                left: 560px;
+                width: 102px;
+                height: 184px;
+                transform: rotate(-30deg);
+                -ms-transform: rotate(-30deg);
+                -webkit-transform: rotate(-30deg);
+                opacity: 1;
+                z-index: 4;
+                border: none !important;
+            }
+            #ticket img{
+                border: none !important;
+            }
+            #food{
+                position: absolute;
+                top: 400px;
+                left: 264px;
+                width: 136px;
+                transform: rotate(-9deg);
+                -ms-transform: rotate(-9deg);
+                -webkit-transform: rotate(-9deg);
+                opacity: 0;
+                z-index: 5;
+                border: none !important;
+            }
+            #food img{
+                border: none !important;
+            }
+            #note{
+                position: absolute;
+                top: 400px;
+                left: 160px;
+                width: 134px;
+                /*
+                transform: rotate(-9deg);
+                -ms-transform: rotate(-9deg);
+                -webkit-transform: rotate(-9deg);
+                */
+                opacity: 0;
+                z-index: 6;
+                border: none !important;
+            }
+            #note img{
+                border: none !important;
+            }
+            #whiteBox{
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                left: 100px;
+                top: 100px;
+                border-radius: 300px;
+                -moz-border-radius: 300px;
+                -webkit-border-radius: 300px;
+                background-color: white;
+                overflow: hidden;
+                opacity: 1;
+            }
+            #theQuestion{
+                position: absolute;
+                top: 200px;
+                left: 160px;
+                text-align: left;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-size: 32px;
+                line-height: 34px;
+                width: 200px;
+                opacity: 1;
+            }
+            #copy1{
+                position: absolute;
+                left: 30px;
+                top: 50px;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-size: 32px;
+                line-height: 32px;
+                opacity: 0;
+                letter-spacing: 1px;
+                z-index: 200;
+            }
+            #copy2{
+                position: absolute;
+                left: 30px;
+                top: 50px;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-size: 32px;
+                line-height: 32px;
+                opacity: 0;
+                letter-spacing: 1px;
+                z-index: 300;
+                width: 400px;
+            }
+            #copy3{
+                position: absolute;
+                left: 30px;
+                top: 50px;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-size: 32px;
+                line-height: 32px;
+                opacity: 0;
+                letter-spacing: 1px;
+                width: 400px;
+                z-index: 400;
+            }
+            #fiosLets{
+                position: absolute;
+                left: 30px;
+                top: 30px;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-size: 34px;
+                line-height: 36px;
+                opacity: 1;
+                letter-spacing: 1px;
+                z-index: 200;
+            }
+            #finalframe{
+                position: absolute;
+                left: 30px;
+                top: 30px;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-size: 34px;
+                line-height: 36px;
+                opacity: 1;
+                font-weight: bolder;
+                z-index: 500;
+                letter-spacing: 1px;
+            }
+            #clickableArea{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 300px;
+                height: 250px;
+                z-index: 601;
+            }
+            a:hover #cta{
+                background-color: #A80309;
+                border: none !important;
+            }
+            #efCopy{
+                position: absolute;
+                font-family: "Neue Haas Grotesk bold", Arial, sans-serif;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 27px;
+                letter-spacing: .4px;
+                top: 17px;
+                left: 16px;
+                color: #000000;
+                opacity: 1; 
+            } 
+            #efSubtitle{
+                position: absolute;
+                font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                font-weight: 800;
+                font-size: 16px;
+                line-height: 14px;
+                letter-spacing: 0.9px;
+                color: #000;
+                left: 32px;
+                top: 148px;
+                opacity: 0;
+            }
+            #cta{
+                width: 138px;
+                height: 38px;
+                background-color: #CD040B;
+                position: absolute;
+                left: 332px;
+                top: 430px;         
+                opacity: 0;
+            }
+            #ctaText {
+                width: 138px;
+                height: 38px;
+                font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                font-size: 16px;
+                line-height: 14px !important;
+                letter-spacing: 0.5px;
+                color: #fff;  
+                padding-top: 12px;
+                padding-left: 20px;
+            }
+            #arrow {
+                position: absolute;
+                right: 15px;
+                top: 0px;
+                border: none !important;
+            }
+            #arrow img{
+                border: none !important;
+            }
+            #logo{
+                position: absolute;
+                width: 74px;
+                top: 406px;
+                left: 24px;
+                opacity: 0;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <div id="border">
+            <a href="javascript:window.open(window.clickTag);">
+            <div id="screen"></div>
+
+            <div id="clickableArea">
+
+                <div id="whiteBox"></div> 
+                <div id="theQuestion">What can<br/>$10 a month<br/>get you?</div>
+
+                <div id="copy3">Your favorite album.</div>
+                <div id="copy2">A burger and fries.</div>
+                <div id="copy1">A movie ticket.</div>
+                
+                <div id="mask"><img src="imgs/mask.svg" alt="mask" width="500px" heigth="500px"></div>
+                    <div id="ticket"><img src="imgs/ticket.svg" alt="ticket"/></div>
+                    <div id="food"><img src="imgs/food.svg" alt="ticket"/></div>
+                    <div id="note"><img src="imgs/note.svg" alt="ticket"/></div>
+
+                <div id="fiosLets">Lucky you.<br />You get<br />an exclusive<br />employee offer.</div>
+                
+                <div id="finalframe">Save $10/mo.<br />on a Fios<br />Triple Play.</div>
+                <div id="endFrame1"><div id="efSubtitle">Available online only.</div>
+                </div>
+
+                <img id="logo" src="imgs/2015_FiOS_logo.svg" style="border-style:none";>
+                <div id="cta">
+                    <div id="ctaText">Learn more</div>
+                    <div id="arrow"><img class="cta-arrow" src="imgs/arrow.png" /></div>
+                </div>
+            </div>
+            <a/>
+        </div>
+        
+        <!--CDN FOR GREENSOCK TWEENMAX-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <!--SPLIT TEXT LOCAL FILE-->
+        <script src="jsMin/SplitText.min.js"></script>
+        <script>
+            var copyOne = new SplitText("#theQuestion", {type:"lines"});
+            var copyTwo = new SplitText("#fiosLets", {type:"lines"});
+            var finalframe = new SplitText("#finalframe", {type:"lines"});
+        
+            function init(){
+                eventOne();
+            }
+
+            function eventOne(){
+                var tl = new TimelineLite();
+                var blocker = document.getElementById("screen");
+
+                //FRAME 1
+                blocker.style.opacity = 0;
+                tl.to(blocker, .01, {opacity:0})
+
+                //FRAME 2
+                .from(whiteBox, .5, {css:{width:"1px", height:"1px", top:"250px", left:"250px"}, ease:Back.easeOut}, 0.1)
+                .staggerFrom(copyOne.lines, .5, {css:{top:"+=25px", opacity:"0"}, ease:Strong.easeOut}, 0.1)
+                .to(copyOne.lines, .5, {opacity:0}, 4)
+                .to(theQuestion, 0.5, {css:{opacity:0}, ease:Strong.easeOut}, 1.4)
+
+                .to(whiteBox, 1, {css:{width: "161px", height: "161px", top:"270px", left:"250px"}, ease: Power1.easeOut}, 1.6)
+                .to(copy1, 1, {css:{top:"-=20px", opacity:1}, ease:Strong.easeOut}, 1.8)
+
+                .to(mask, 0.5, {css:{opacity:1}, ease:Strong.easeOut}, 2.4)
+                .to(ticket, 0.5, {css:{top:"250px", left:"274px"}, ease:Strong.easeOut}, 2.4)
+
+                .to(ticket, 0.5, {css:{top:"600px", left:"560px"}, ease:Strong.easeOut}, 4)
+                .to(copy1, .25, {css:{opacity:0}}, 4.2)
+
+                //FRAME 3
+                .to(mask, 0.6, {css:{transform: "rotate(90deg)"}, ease:Strong.easeOut}, 4)
+            
+                .to(food, 0.5, {css:{opacity:1}}, 4.2)
+                .to(food, 0.5, {css:{top:"282px", left:"264px"}, ease:Strong.easeOut}, 4.2)
+                .to(copy2, 1, {css:{top:"-=20px", opacity:1}, ease:Strong.easeOut}, 4.4)
+
+                .to(food, 1, {css:{top:"540px", left:"264px"}, ease:Strong.easeOut}, 6.4)
+                .to(copy2, .25, {css:{opacity:"0"}}, 6.6)
+
+                //FRAME 4
+                .to(note, 0.5, {css:{opacity:1}}, 6.8)
+                .to(note, 0.5, {css:{top:"280px", left:"264px"}, ease:Strong.easeOut}, 6.9)
+                .to(copy3, 1, {css:{top:"-=20px", opacity:1}, ease:Strong.easeOut}, 7.2)
+
+                .to([ticket, food, note, copy3], .25, {css:{opacity:0}}, 9.3)
+                .to([mask, whiteBox], .25, {css:{opacity:0}}, 9.4)
+
+                //FRAME 5       
+                .staggerFrom(copyTwo.lines, .5, {css:{top:"+=25px", opacity:0}, ease:Strong.easeOut}, 0.1)
+                .to(copyTwo.lines, .25, {css:{opacity:0}}, 12)
+
+                //FRAME 6
+                .staggerFrom(finalframe.lines, .5, {css:{top:"+=25px", opacity:0}, ease:Strong.easeOut}, 0.1)
+                .to(efSubtitle, .5, {css:{opacity:1}, ease:Strong.easeOut}, 12.6)
+                .to(logo, .25, {css:{opacity:1}, ease:Strong.easeOut}, 12.8)              
+                .to(cta, .25, {css:{opacity:1}, ease:Strong.easeOut}, 13)              
+            }
+
+            init();
+
+        </script>
+    </body>
+
+</html>

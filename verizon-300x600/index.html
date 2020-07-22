@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Verizon FiOS</title>
+        <meta name="ad.size" content="width=300,height=600">
+        <script type="text/javascript">
+            var clickTag = "";
+        </script>
+        
+        
+        <style>
+            @font-face {
+                font-family: "Neue Haas Grotesk";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplay.svg') format('svg');
+                font-weight:400;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Medium";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaymedium.svg') format('svg');
+                font-weight:600;
+                font-style:normal;
+            }
+            
+            @font-face {
+                font-family: "Neue Haas Grotesk Bold";
+                src: url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.ttf') format('ttf'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff') format('woff'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.woff2') format('woff2'),
+                     url('https://cdde858ebed93488811f-4a840a140d7caee3c01f302484ec5d42.ssl.cf2.rackcdn.com/Fonts/neuehaasgroteskdisplaybold.svg') format('svg');
+                font-weight:800;
+                font-style:normal;
+            }
+            
+            
+            body{
+                margin: 0;
+                padding: 0;
+                width: 300px;
+                height: 600px;
+                line-height: 1.2;
+                font-size: 28px;
+                letter-spacing: .4;
+                color: #cd040b;
+                font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                /*font-weight: 800;*/ /*BOLD-800, MEDIUM-600, ROMAN - 400*/
+                font-style: normal;
+                
+            }
+            
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            sup{
+                font-size: 50%;
+            }
+            
+            #border{
+				box-sizing: border-box;
+                position: relative;
+                width: 300px;
+                height: 600px;
+                border: 1px solid #000;
+                background-color: #E7E7E7;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            
+            #border:hover  #cta{
+                background-color: #666666;
+            }
+            
+            #screen{
+                z-index: 300;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #fff;
+            }
+			#copy1{
+                position: absolute;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+				font-weight: 800;
+				font-size: 27px;
+				line-height: 29px;
+				letter-spacing:.8px;
+                left: 80px;
+                top: 200px;
+                opacity: 1;	
+            }
+			#container{
+                position: absolute;
+                opacity: 1;
+                width: 230px;
+                height: 230px;
+                left: 34px;
+                top: 155px;
+            }
+            #spinner1{
+                position: absolute;
+                opacity: 1;
+                left: 0px;
+                width: 115px;
+                height: 230px;
+                -webkit-border-top-left-radius: 0px;
+                -webkit-border-top-right-radius: 230px;
+                -webkit-border-bottom-right-radius: 230px;
+                -webkit-border-bottom-left-radius: 0px;
+
+                -moz-border-radius-topleft: 0px;
+                -moz-border-radius-topright: 230px;
+                -moz-border-radius-bottomright: 230px;
+                -moz-border-radius-bottomleft: 0px;
+
+                border-top-left-radius: 0px;
+                border-top-right-radius: 230px;
+                border-bottom-right-radius: 230px;
+                border-bottom-left-radius: 0px;
+
+                -webkit-background-clip: padding-box; 
+                -moz-background-clip: padding; 
+                background-clip: padding-box;
+
+                background-color:#abe0f9;
+            }
+            #spinner2{
+                position: absolute;
+                opacity: 1;
+                width: 115px;
+                height: 230px;
+                -webkit-border-top-left-radius: 230px;
+                -webkit-border-top-right-radius: 0px;
+                -webkit-border-bottom-right-radius: 0px;
+                -webkit-border-bottom-left-radius: 230px;
+
+                -moz-border-radius-topleft: 230px;
+                -moz-border-radius-topright: 0px;
+                -moz-border-radius-bottomright: 0px;
+                -moz-border-radius-bottomleft: 230px;
+
+                border-top-left-radius: 230px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 230px;
+
+                left: 0px;
+                background-color:#abe0f9;
+            }
+            #masker1{
+                position: absolute;
+                width: 115px;
+                height: 230px;
+                left: 115px;
+                overflow: hidden;
+                opacity: 1;
+            }
+            #masker2{
+                position: absolute;
+                width: 115px;
+                height: 230px;
+                left: 0px;
+                overflow: hidden;
+                opacity: 1;
+            }
+			#copy2{
+                position: absolute;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+				font-weight: 800;
+				font-size: 27px;
+				line-height: 29px;
+				letter-spacing:.8px;
+                left: 60px;
+                top: 200px;
+                opacity: 1;	
+            }
+			
+			#copy3{
+                position: absolute;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+				font-weight: 800;
+				font-size: 22px;
+                top: 82px;
+                left: 20px;
+				letter-spacing:.5px;
+                color: #000000;
+                opacity: 1;	
+            }
+			#copy4{
+                position: absolute;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+				font-weight: 800;
+				font-size: 13px;
+                top: 3px;
+                left: 7px;
+                color: #000000;
+                opacity: 1;	
+            }
+			#copy5{
+                position: absolute;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+				font-weight: 800;
+				font-size: 62px;
+				letter-spacing:1px;
+                top: 168px;
+                left: 30px;
+                opacity: 1;	
+            }
+			#copy6{
+                position: absolute;
+				font-family: "Neue Haas Grotesk Bold", Arial, sans-serif;
+				font-weight: 800;
+				font-size: 36px;
+				letter-spacing:1.5px;
+                top: 175px;
+                right: 24px;
+                color: #000000;
+                opacity: 1;	
+            }
+			#copy7{
+                position: absolute;
+				font-family: "Neue Haas Grotesk", Arial, sans-serif;
+				font-weight: 400;
+				font-size: 12px;
+				line-height:16px;
+				letter-spacing:.4px;
+                top: 239px;
+                left: 21px;
+                color: #000000;
+                opacity: 1;	
+            }
+			
+			#logo{
+                position: absolute;
+                width: 56px;
+                bottom: -23px;
+                left: 22px;
+                opacity: 1;
+            }
+			#cta{
+                width: 154px;
+                height: 48px;
+                background-color: #CD040B;
+                position: absolute;
+                right: 11px;
+                bottom: 18px;
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                font-family: "Neue Haas Grotesk", Arial, sans-serif;
+				font-weight: 400;
+                line-height: 250%;
+                letter-spacing: .5;
+                opacity: 1;
+            }
+            #ctaCopy{
+				position: absolute;
+				width: 103px;
+				height: 15px;
+				left:25px;
+				top: 16px;
+			}
+			#cyanCircle{
+                width: 300px;
+                height: 250px;
+                background-color: #89D8F8;
+				opacity: 1;
+            }
+			#maskerPrice{
+                width: 22px;
+                height: 22px;
+                left: 20px;
+                top: 173px;
+                position: absolute;
+                border-radius: 35px;
+				-moz-border-radius: 35px;
+				-webkit-border-radius: 35px;
+                overflow: hidden;
+                opacity: 1;
+				z-index: 100;
+            }
+			
+			#legal{
+                z-index: 600;
+            }
+            
+            #legalCopy{
+                position: absolute;
+				font-family: "Neue Haas Grotesk", Arial, sans-serif;
+                font-size: 10px;
+                font-weight: 400;
+				line-height: 13px;
+                letter-spacing: 0;
+                color: #4f4f4f;
+                width: 300px;
+                height: 250px;
+                bottom: -250px;
+                background-color: #ffffff;
+                z-index: 600;
+            }
+            
+            #legalCopy p{
+                position: absolute;
+                width: 280px;
+				top: 12px;
+                left: 23px;
+                z-index: 600;
+            }
+            
+            #legalTag{
+				font-family: "Neue Haas Grotesk Medium", Arial, sans-serif;
+                font-size: 11px;
+                color: #000;
+                font-weight: 600;
+                position: absolute;			
+                right: 103px;
+                bottom: 70px;
+                z-index: 100;
+                opacity: 1;
+			}
+			
+        </style>
+    </head>
+    
+    <body>
+        <a href="javascript:window.open(window.clickTag)">
+        <div id="border">
+            <div id="screen"></div>
+            <div id="legal">
+                <div id="legalTag">Offer Details</div>
+                <div id="legalCopy"><p><u>Offer Details</u><br /><br />^$350 via Verizon Visa® Prepaid Card issued by MetaBank®,<br />member FDIC, pursuant to a license from Visa U.S.A. Inc. Use<br />anywhere Visa debit cards are accepted. Must have service<br />for 60 days with no past-due balance. Card mailed within 90<br />days of install date. Other card terms and conditions apply.<br />Offer ends 9/19/15.<br /><br />Up to $89.99 installation fee, up to $4.99/mo. Regional<br />Sports Network fee, $1.99/mo. Broadcast Fee, up to<br />$9.99/mo. router fee, $0.99/mo. FDV Admin Fee, $11.99/mo.<br />HD STB, & other fees, taxes, equip. charges & terms may<br />apply.<br /><br />© 2015 Verizon</p></div>
+			<div id="container">
+                <div id="masker1">
+                    <div id="spinner1"></div>
+                </div>  
+                <div id="masker2">
+                    <div id="spinner2"></div>
+                </div>    
+            </div>
+            <div id="copy1">Time is<br />running<br />out on<br />this great<br />FiOS offer.</div>
+            <div id="copy2">Last chance<br />to get this<br />offer<br />and a $350<br />Visa prepaid<br />card by 9/19.</div>
+                    
+            <div id="copy3">Act by 9/19 to get FiOS<br />with a $350 Visa prepaid<br />card for</div>
+            <div id="maskerPrice">
+                <div id="copy4">$</div>
+                <div id="cyanCircle"></div>
+            </div>
+            <div id="copy5">79.99</div>
+            <div id="copy6">/mo</div>
+            <div id="copy7">for 2 years plus taxes, equip. charges.<br />FDV & other fees.</div>
+            
+            <img id="logo" src="imgs/vz_fios.svg" style="border-style:none">
+            <div id="cta">
+            	<img id="ctaCopy" src="imgs/cta.png" style="border-style:none">
+            </div>
+            
+           
+        </div>
+        </a>
+        
+        <!--CDN FOR GREENSOCK TWEENMAX-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <!--SPLIT TEXT LOCAL FILE-->
+        <script src="jsMin/SplitText.min.js"></script>
+      
+        <script>
+            
+            var legalOpen = false;
+            var copyOne = new SplitText("#copy1", {type:"lines"});
+			var copyTwo = new SplitText("#copy2", {type:"lines"});
+            var duration = 5;
+            var speed = duration / 2;
+
+			
+            function legalOver(){
+				
+                if(legalOpen == true){
+                    TweenMax.to(legalCopy, .5, {css: {bottom:"-250px"}, ease:Strong.easeOut});
+					TweenMax.to(legalTag, .5, {alpha:1, ease:Strong.easeOut});
+                    legalOpen = false;
+                    
+                } else if(legalOpen == false){
+                    TweenMax.to(legalCopy, .5, {css: {bottom:"0px"}, ease:Strong.easeOut});
+					TweenMax.to(legalTag, .5, {alpha:0, ease:Strong.easeOut});
+                    legalOpen = true;
+                }
+            }
+                        
+            function init(){
+                eventOne();
+            }
+            function initDisclaimer()
+			{
+				document.getElementById("legalTag").style.zIndex = 600;
+				document.getElementById("legal").onmouseover = legalOver;
+				document.getElementById("legal").onmouseout = legalOver;	
+			}
+			function First(){
+                TweenMax.to(spinner1, speed, {rotation:180, transformOrigin:"0px 115px",ease:Linear.easeNone,onComplete:Next})
+            }
+            function Next(){
+                TweenMax.to(spinner2, speed, {rotation:180, transformOrigin:"115px 115px",ease:Linear.easeNone})
+
+            }
+            function eventOne(){
+                var tl = new TimelineLite();
+                var blocker = document.getElementById("screen");
+				tl.to(blocker, .01, {opacity:0})
+				First();
+				tl.staggerFrom(copyOne.lines, .5, {css:{top:"+=25px" ,opacity:"0"}, ease:Strong.easeOut}, 0.1)
+				tl.to(copyOne.lines, .5, {opacity:0}, 2.5)
+				tl.staggerFrom(copyTwo.lines, .5, {css:{top:"+=25px" ,opacity:"0"}, ease:Strong.easeOut}, 0.1)
+				tl.to(copyTwo.lines, .5, {opacity:0}, 6)
+	
+				tl.from(copy3, .25, {css:{top:"+=25px" ,opacity:"0"}}, 6)
+				tl.from(copy4, .25, {css:{top:"+=25px" ,opacity:"0"}}, 6.1)
+				tl.from(maskerPrice, .25, {css:{top:"+=25px" ,opacity:"0"}}, 6.1)
+				tl.from(copy5, .25, {css:{top:"+=25px" ,opacity:"0"}}, 6.2)
+				tl.from(copy6, .25, {css:{top:"+=25px" ,opacity:"0"}}, 6.3)
+				tl.from(copy7, .25, {css:{top:"+=25px" ,opacity:"0"}}, 6.3)
+				tl.from(logo, .25, {opacity:0}, 6.4)
+				tl.from(legalTag, .25, {opacity:0, onComplete:initDisclaimer}, 6.5)
+				tl.from(cta, .25, {opacity:0}, 6.4)
+            }
+            
+            //---------------------
+            init();
+            
+        
+        
+        
+        </script>
+    </body>
+
+</html>
