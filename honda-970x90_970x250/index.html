@@ -1,0 +1,175 @@
+<!doctype html> 
+<html> 
+<head> 
+<meta charset="utf-8"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+<title>index</title>
+<link rel="stylesheet" href="style.css"/>
+<script>EBModulesToLoad = ['EBCMD'];</script>
+<script type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+<script type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingRes/CustomScripts/html5_auto_expand_frequency_capping_v1.js"></script>
+<script type="text/javascript" src="scripts/pushdown_banner.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<!--<script type="text/javascript" src="scripts/anim.js"></script>-->
+<script type="text/javascript">
+	var adDiv;
+	var bannerDiv;
+	var expansionDiv;
+	var expandDuration = 500;
+	var collapseDuration = expandDuration;
+	var pushdownSettings = {
+		pushDown: true, 
+		expandDuration: expandDuration || 0, 
+		collapseDuration: collapseDuration || 0 
+	};
+
+	function initEB(){
+		if (!EB.isInitialized()){
+			EB.addEventListener(EBG.EventName.EB_INITIALIZED, startAd);
+		}else{
+			startAd();
+		}
+	}
+	function startAd(){
+		EB.initExpansionParams(0,0,970,250);
+		EB._sendMessage("resizecontainer", pushdownSettings);
+		adDiv = document.getElementById("ad");
+		bannerDiv = document.getElementById("banner");
+		expansionDiv = document.getElementById("expansion");
+		bannerDiv.style.visibility = "visible";
+		setUpAutoExpandFrequencyCapping();
+	}
+	function setUpAutoExpandFrequencyCapping() {
+		var autoExpandSettings = {
+			isEnabled: false,
+			frequency: EB.autoExpandFrequencyCapping.Frequencies.UNLIMITED,
+			expansionsPerPeriod: 1,
+			timeUntilAutoCollapse: 0
+		};
+		var beforeAutoExpandSubscription = new EB.autoExpandFrequencyCapping.EventSubscription({
+			eventName: EB.autoExpandFrequencyCapping.Events.AUTO_EXPAND, 
+			callback: switchToExpandedGraphics, 
+			callbackBinding: this, 
+			timing: EB.autoExpandFrequencyCapping.EventTiming.BEFORE
+		});
+		var afterAutoCollapseSubscription = new EB.autoExpandFrequencyCapping.EventSubscription({
+			eventName: EB.autoExpandFrequencyCapping.Events.AUTO_COLLAPSE, 
+			callback: doCollapseBehavior, 
+			callbackBinding: this, 
+			timing: EB.autoExpandFrequencyCapping.EventTiming.AFTER
+		});
+
+		EB.autoExpandFrequencyCapping.subscribeToEvent(beforeAutoExpandSubscription);
+		EB.autoExpandFrequencyCapping.subscribeToEvent(afterAutoCollapseSubscription);
+		EB.autoExpandFrequencyCapping.initialize(autoExpandSettings);
+	}
+	function expand(){
+		switchToExpandedGraphics();
+		EB.expand();
+	}
+	function switchToExpandedGraphics() {
+		expansionDiv.style.visibility = "visible";
+		removeClass(adDiv, "collapsed");
+		setClass(adDiv, "expanded");
+	}
+	function collapse(){
+		EB.collapse();
+		EB.autoExpandFrequencyCapping.cancelAutoCollapse();
+		doCollapseBehavior();
+	}
+	function doCollapseBehavior() {
+		if (!window.hasOwnProperty("collapseDuration") || collapseDuration <= 0) {
+			switchToCollapsedGraphics();
+		}
+		else {
+			setTimeout(switchToCollapsedGraphics, collapseDuration + 100);
+		}
+	}
+	function switchToCollapsedGraphics() {
+		expansionDiv.style.visibility = "hidden";
+		removeClass(adDiv, "expanded");
+		setClass(adDiv, "collapsed");
+	}
+	function handleExpandButtonClick() {
+		expand();
+		initExp();
+	}
+	function handleCloseButtonClick() {
+		collapse();
+		initCol();
+	}
+	function handleClickthroughButtonClick() {
+		EB.clickthrough();
+	}
+	function handleUserActionButtonClick() {
+		EB.userActionCounter("CustomInteraction");
+	}
+
+</script>
+
+</head> 
+<body onload="initEB();">
+	<div id="container">
+		<div id="ad" class="collapsed">
+			<!--<div id="banner" style="cursor:pointer" onclick="javascript:handleClickthroughButtonClick();">-->
+			<div id="banner">
+				<div id="col-frame">
+					<img id="col-bg" src="images/col-bg.jpg">
+					<img id="col-logo" src="images/col-logo.jpg">
+					<img id="col-placa1" src="images/col-placa1.png">
+					<img id="col-placa2" src="images/col-placa2.png">
+					<img id="col-placa3" src="images/col-placa3.png">
+					<img id="col-civic" src="images/col-civic.png">
+				</div>
+					<button id="clickthroughButton" class="button clickthrough" onclick="javascript:handleClickthroughButtonClick();">ClickThrough</button>
+					<button id="expandButton" class="button expand" onclick="javascript:handleExpandButtonClick();">EXPANDIR</button>
+			</div>
+			
+					
+			<div id="expansion">
+				<img id="exp-bg" src="images/exp-bg.jpg">
+				<img id="exp-placa1" src="images/exp-placa1.png">
+				<img id="exp-civic" src="images/exp-civic.png">
+				<button id="clickthroughButton" class="button clickthrough" onclick="javascript:handleClickthroughButtonClick();">ClickThrough</button>
+				<button id="closeButton" class="button close" onclick="javascript:handleCloseButtonClick();">CERRAR</button>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+
+    
+    var _tt1 = new TimelineMax( {repeat: 0, delay: 1} );
+
+	function initCol() {
+		_tt1.restart();
+	    _tt1
+	    .to("#col-frame", 0.1, {opacity: 1, ease: Linear.easeInOut}, 0)
+
+	    .to("#col-placa1", 1, {opacity: 1, ease: Power1.easeInOut}, 0 )
+		.to("#col-placa2", 0.5, {opacity: 1, ease: Power1.easeInOut}, 1 )
+		.to("#col-placa3", 1, {opacity: 1, left: 0, ease: Power2.easeOut}, 3.5 )		
+		.to(["#col-placa1", "#col-placa2"], 1, {opacity: 0, transformOrigin:"50% 50%", ease: Power4.easeInOut}, 3 )
+		.to("#col-placa3", 1, {opacity: 0, transformOrigin:"50% 50%", ease: Power2.easeOut}, 6 )
+		.to("#col-civic", 1, {opacity: 1, left: 0, ease: Power2.easeOut}, 6.4 )
+		;
+	}
+	initCol();
+
+	var _tt2 = new TimelineMax( {repeat: 0, delay: 1} );
+
+	function initExp() {
+		_tt2.restart();
+		_tt2
+
+		.to("#exp-civic", 1.5, {opacity: 1, left: 0, transformOrigin:"50% 50%", ease: Power2.easeOut}, 0 )
+		.to("#exp-placa1", 1, {opacity: 1, left: 0, transformOrigin:"50% 50%", ease: Power2.easeOut}, 1 )
+	    ;
+	}
+
+
+	</script>
+
+	
+</body> 
+</html>
